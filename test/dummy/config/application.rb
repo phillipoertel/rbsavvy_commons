@@ -21,6 +21,15 @@ module Dummy
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    def run_initializers(group=:default, *args)
+      return if instance_variable_defined?(:@ran)
+      initializers.tsort_each do |initializer|
+        puts "init: #{initializer.name}"
+        initializer.run(*args) if initializer.belongs_to?(group)
+      end
+      @ran = true
+    end
   end
 end
 
