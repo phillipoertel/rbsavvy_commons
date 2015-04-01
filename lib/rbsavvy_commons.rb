@@ -8,12 +8,12 @@ require 'dotenv'
 
 Dotenv.load if Rails.env.test? or Rails.env.development?
 
-require 'rbsavvy/logger'
-
 module RBSavvy
   def self.logger
     @@logger ||= ActiveSupport::TaggedLogging.new(RBSavvy::Logger.new)
   end
 end
 
+
+require 'rbsavvy/logger'
 require 'rbsavvy/engine'
