@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     rbsavvy_commons (0.0.1)
+      dotenv
       lograge
       newrelic_rpm
       rails (~> 4.2.1)
@@ -49,6 +50,7 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.0)
     builder (3.2.2)
+    dotenv (2.0.0)
     erubis (2.7.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)

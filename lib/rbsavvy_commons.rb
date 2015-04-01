@@ -4,6 +4,9 @@ require 'lograge'
 require 'rails_serve_static_assets'
 require 'newrelic_rpm'
 require 'rollbar'
+require 'dotenv'
+
+Dotenv.load
 
 require 'rbsavvy/logger'
 
