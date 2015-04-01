@@ -3,10 +3,16 @@ require 'active_support/core_ext'
 
 class RBSavvy::Logger < ::Logger
   DATETIME_FORMAT = "%Y-%m-%d %I:%M:%S.%6N %z"
-  LOG_FORMAT      = "%s %5s [TID-%s] %s\n"
+  LOG_FORMAT      = "%s %5s [PID-%s] [TID-%s] %s\n"
 
   LOG_FORMATTER   = ->(severity, datetime, progname, msg) {
-    LOG_FORMAT % [datetime.strftime(DATETIME_FORMAT), severity, Thread.current.object_id.to_s(36), msg]
+    LOG_FORMAT % [
+      datetime.strftime(DATETIME_FORMAT),
+      severity,
+      Process.pid,
+      Thread.current.object_id.to_s(36),
+      msg
+    ]
   }
 
   LOGRAGE_UNWANTED_PARAM_KEYS = %w[format action controller]
