@@ -6,7 +6,7 @@ require 'newrelic_rpm'
 require 'rollbar'
 require 'dotenv'
 
-Dotenv.load
+Dotenv.load if Rails.env.test? or Rails.env.development?
 
 require 'rbsavvy/logger'
 
