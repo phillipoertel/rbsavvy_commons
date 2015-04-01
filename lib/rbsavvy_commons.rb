@@ -1,5 +1,9 @@
-require 'unicorn-rails'
+require 'unicorn'
+require 'rack/handler/unicorn'
 require 'lograge'
+require 'rails_serve_static_assets'
+require 'newrelic_rpm'
+require 'rollbar'
 
 require 'rbsavvy/logger'
 

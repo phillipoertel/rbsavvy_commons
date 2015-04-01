@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency 'rails', '~> 4.2.1'
-  s.add_dependency 'unicorn-rails'
+  s.add_dependency 'unicorn'
   s.add_dependency 'rails_12factor'
   s.add_dependency 'newrelic_rpm'
   s.add_dependency 'lograge'

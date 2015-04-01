@@ -7,7 +7,7 @@ PATH
       rails (~> 4.2.1)
       rails_12factor
       rollbar (~> 1.2.7)
-      unicorn-rails
+      unicorn
 
 GEM
   remote: https://rubygems.org/
@@ -126,9 +126,6 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    unicorn-rails (2.2.0)
-      rack
-      unicorn
 
 PLATFORMS
   ruby
