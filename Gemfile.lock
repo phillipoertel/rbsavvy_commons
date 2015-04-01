@@ -5,7 +5,7 @@ PATH
       dotenv
       lograge
       newrelic_rpm
-      rails (~> 4.2.1)
+      rails (~> 4.2.0)
       rails_12factor
       rollbar (~> 1.2.7)
       unicorn
