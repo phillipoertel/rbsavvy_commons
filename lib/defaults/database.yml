@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: <%= Rails.application.class.name.split("::").first.downcase %>_development
+
+test:
+  <<: *default
+  database: <%= Rails.application.class.name.split("::").first.downcase %>_test

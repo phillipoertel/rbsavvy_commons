@@ -9,3 +9,15 @@ task :help do
   NEW_RELIC_LOG - Place for newrelic log output. For debugging, set to "STDOUT"
   TEXT
 end
+
+def copy_template template, path
+  $commons_path ||= `bundle list rbsavvy_commons`.strip
+  src  = "#{$commons_path}/lib/defaults/#{template}"
+  dest = "#{path}/#{template}"
+
+  unless File.exists? dest
+    puts "copy from #{src} to #{dest}"
+    FileUtils.cp src, dest
+  end
+
+end
