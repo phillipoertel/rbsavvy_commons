@@ -22,6 +22,10 @@ namespace :rbsavvy do
 
       copy_template 'database.yml', './config'
 
+      unless system "grep '.postgres' .gitignore"
+        system 'echo .postgres >> .gitignore'
+      end
+
       Rake::Task['db:create'].invoke
       Rake::Task['db:migrate'].invoke
     end
