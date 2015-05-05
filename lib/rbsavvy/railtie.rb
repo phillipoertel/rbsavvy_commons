@@ -22,6 +22,7 @@ module RBSavvy
     rake_tasks do
       load File.expand_path('../../tasks/help.rake', __FILE__)
       load File.expand_path('../../tasks/setup.rake', __FILE__)
+      load File.expand_path('../../tasks/deploy.rake', __FILE__)
 
     end
   end
