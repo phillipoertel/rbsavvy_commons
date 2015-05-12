@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails_12factor'
   s.add_dependency 'newrelic_rpm'
   s.add_dependency 'lograge'
-  s.add_dependency 'rollbar', '~> 1.2.7'
+  s.add_dependency 'rollbar'
   s.add_dependency 'dotenv'
 
   s.add_development_dependency "sqlite3"
