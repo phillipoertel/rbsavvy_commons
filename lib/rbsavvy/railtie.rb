@@ -19,8 +19,15 @@ module RBSavvy
         params = event.payload[:params].reject { |key,_|
           RBSavvy::Logger::LOGRAGE_UNWANTED_PARAM_KEYS.include? key
         }
+
         Hash.new.tap do |payload|
-          payload[:params] = params.to_json if params.present?
+          begin
+            payload[:params] = params.to_json if params.present?
+          rescue => e
+            attempt ||= 1
+            attempt += 1
+            retry if attempt < 4
+          end
         end
       end
     end
