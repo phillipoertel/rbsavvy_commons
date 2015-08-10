@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 4.2.0'
   s.add_dependency 'unicorn'
+  s.add_dependency 'puma'
   s.add_dependency 'rails_12factor'
   s.add_dependency 'newrelic_rpm'
   s.add_dependency 'lograge'

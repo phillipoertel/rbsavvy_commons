@@ -42,10 +42,6 @@ module Rack
         end
       end
     end
-
-    def self.default(options = {})
-      Rack::Handler::Unicorn
-    end
   end
 end
 

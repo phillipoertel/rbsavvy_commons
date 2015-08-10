@@ -17,9 +17,10 @@ Dotenv.load if Rails.env.test? or Rails.env.development?
 ENV['NRCONFIG'] ||= RBSavvy.file_path("config/newrelic.yml")
 require 'newrelic_rpm'
 
+
 # Unicorn
 require 'unicorn'
-require 'rack/handler/unicorn'
+require 'rack/handler/rbsavvy'
 
 # Random
 require 'lograge'
@@ -29,3 +30,5 @@ require 'rollbar'
 # rbsavvy specific
 require 'rbsavvy/logger'
 require 'rbsavvy/railtie'
+
+::NewRelic::Agent.logger = RBSavvy.logger

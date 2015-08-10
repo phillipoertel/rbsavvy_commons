@@ -37,4 +37,17 @@ class RBSavvy::Logger < ::Logger
   def extend(mod)
     super(mod) if mod == ActiveSupport::TaggedLogging
   end
+
+
+  def puts *args
+    info *args
+  end
+
+  def info *args
+    args.each { |l| super(l) }
+  end
+
+  def method_missing(m, *args, &block)
+    debug "There's no method called #{m} here -- please try again."
+  end
 end
