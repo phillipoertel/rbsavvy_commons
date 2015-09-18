@@ -1,5 +1,6 @@
 module RBSavvy
   class Engine < ::Rails::Railtie
+    # Setup unified logging
     config.before_initialize  do |app|
       Rails.logger = app.config.logger = RBSavvy.logger
       config.log_level = RBSavvy::Logger::LOG_LEVEL
@@ -32,6 +33,21 @@ module RBSavvy
       end
     end
 
+
+    # Setup Rollbar
+    initializer 'rbsavvy_commons:rollbar' do
+      require 'rollbar/rails'
+      Rollbar.configure do |config|
+        config.access_token = ENV['ROLLBAR_ACCESS_TOKEN']
+
+        if Rails.env.test? || Rails.env.development?
+          config.enabled = false
+        end
+      end
+    end
+
+
+    # Load rake tasks
     rake_tasks do
       load File.expand_path('../../tasks/help.rake', __FILE__)
       load File.expand_path('../../tasks/setup.rake', __FILE__)
