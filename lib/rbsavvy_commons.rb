@@ -26,9 +26,13 @@ require 'rack/handler/rbsavvy'
 require 'lograge'
 require 'rails_serve_static_assets'
 require 'rollbar'
+require 'mutations'
 
 # rbsavvy specific
 require 'rbsavvy/logger'
 require 'rbsavvy/railtie'
+
+require 'rbsavvy/form'
+require 'rbsavvy/database_transactions'
 
 ::NewRelic::Agent.logger = RBSavvy.logger

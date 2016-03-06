@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'lograge'
   s.add_dependency 'rollbar'
   s.add_dependency 'dotenv'
+  s.add_dependency 'mutations'
 
   s.add_development_dependency "sqlite3"
 end
