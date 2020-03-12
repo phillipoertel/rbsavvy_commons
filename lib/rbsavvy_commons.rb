@@ -17,11 +17,6 @@ Dotenv.load if Rails.env.test? or Rails.env.development?
 ENV['NRCONFIG'] ||= RBSavvy.file_path("config/newrelic.yml")
 require 'newrelic_rpm'
 
-
-# Unicorn
-require 'unicorn'
-require 'rack/handler/rbsavvy'
-
 # Random
 require 'lograge'
 require 'rails_serve_static_assets'
