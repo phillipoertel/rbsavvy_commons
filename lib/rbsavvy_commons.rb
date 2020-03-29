@@ -13,10 +13,6 @@ end
 require 'dotenv'
 Dotenv.load if Rails.env.test? or Rails.env.development?
 
-# New Relic
-ENV['NRCONFIG'] ||= RBSavvy.file_path("config/newrelic.yml")
-require 'newrelic_rpm'
-
 # Random
 require 'lograge'
 require 'rails_serve_static_assets'

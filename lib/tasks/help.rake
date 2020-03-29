@@ -6,7 +6,6 @@ task :help do
   Environment Variables
   ---------------------
   LOG_LEVEL     - Sets the logging level
-  NEW_RELIC_LOG - Place for newrelic log output. For debugging, set to "STDOUT"
   TEXT
 end
 
