@@ -26,4 +26,3 @@ require 'rbsavvy/railtie'
 require 'rbsavvy/form'
 require 'rbsavvy/database_transactions'
 
-::NewRelic::Agent.logger = RBSavvy.logger
